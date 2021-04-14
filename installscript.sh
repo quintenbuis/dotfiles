@@ -6,6 +6,9 @@ xcode-select --install
 # iterm2
 brew install iterm2
 
+# Insert aliases
+curl https://gist.githubusercontent.com/quintenbuis/19606f2697b01acec421a05ffddfc4ed/raw/5a73bfa3574972ad486e1127b1200d4f95d4741c/.aliases > ~/.aliases
+
 # composer
 brew install composer
 
@@ -60,8 +63,28 @@ brew install spectacle --cask
 # tinkerwell
 brew install tinkerwell --cask
 
+# spatie/ray
+brew install ray --cask
+
 # figma
 brew install figma --cask
 
 # postman
 brew install postman --cask
+
+# phpmon
+brew tap nicoverbruggen/homebrew-cask
+brew install --cask phpmon
+
+# github cli
+brew install gh
+
+# mailhog
+brew install mailhog
+
+# cyberduck
+brew install cyberduck --cask
+
+
+# add elasticsearch image to docker
+docker run -d --name elasticsearch-793 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.9.3
