@@ -12,11 +12,13 @@ curl https://gist.githubusercontent.com/quintenbuis/19606f2697b01acec421a05ffddf
 # composer
 brew install composer
 
-# NVM
-brew install nvm # NEEDS EXTRA SETUP
-
 # ZSH
-brew install zsh zsh-autosuggestions # NEEDS EXTRA SETUP
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install zsh-autosuggestions # NEEDS EXTRA SETUP
+
+# NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm install stable
 
 # Valet
 brew install php && composer global require laravel/valet && ~/.composer/vendor/bin/valet install
