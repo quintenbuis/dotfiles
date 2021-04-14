@@ -1,0 +1,101 @@
+#---------------------
+# SYSTEM
+#---------------------
+alias lock='pmset displaysleepnow'
+alias pub='cat ~/.ssh/id_rsa.pub'
+alias projects='cd ~/code/projects'
+alias packages='cd ~/code/packages'
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'" # Copy ssh key
+alias ip='curl icanhazip.com'
+alias l='natls -a'
+alias chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+alias aliases='vim ~/.aliases'
+alias load='source ~/.aliases'
+alias c='code .'
+alias s='subl .'
+alias ns='npm start'
+alias start='npm start'
+alias nr='npm run'
+alias run='npm run'
+alias ll='ls -la' # List all files in current directory in long list format
+alias o='open .' # Open the current directory in Finder
+alias sm='php ~/code/projects/server-monitor/artisan'
+alias v='vim'
+alias hg='history | grep'
+
+#---------------------
+# Composer
+#---------------------
+alias composerm='phpm /usr/local/bin/composer'
+alias cu='composerm update'
+alias ci='composerm install'
+alias cpm='composerm'
+
+# ----------------------
+# Git
+# ----------------------
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add -A'
+alias gr='git restore'
+alias grs='git restore --staged'
+alias gd='git diff'
+alias gi='git init'
+alias gl='git log'
+alias gpu='git pull'
+alias gss='git status -s'
+alias gs='git status'
+alias gc='git commit -m'
+alias gp='git push'
+alias gb='git branch'
+alias gco='git checkout'
+alias gsu='git stash -u'
+alias gsp='git stash pop'
+alias reset='git fetch --all && git reset --hard upstream/`git rev-parse --abbrev-ref HEAD` && git push origin `git rev-parse --abbrev-ref HEAD` -f && cpm install'
+alias gpsu='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
+alias commit='git commit -m "wip"'
+
+# ----------------------
+# Laravel
+# ----------------------
+
+alias pa='php artisan'
+alias pat='clear && pa test'
+alias pu='clear && vendor/bin/phpunit'
+alias puf='clear && pu --filter'
+alias pam='pa migrate'
+alias pas='pa migrate --seed'
+alias par='pa migrate:rollback'
+alias sail='vendor/bin/sail'
+alias sa='sail artisan'
+
+# ----------------------
+# PHP
+# ----------------------
+
+alias phpm='php -d memory_limit=-1'
+
+# ----------------------
+# Magento
+# ----------------------
+
+alias getmag-create='composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition'
+alias mag='bin/magento'
+
+alias msu='bin/magento setup:upgrade && mdc'
+alias mcc='bin/magento cache:clean'
+alias mcf='bin/magento cache:flush'
+alias mdc='bin/magento cache:disable layout block_html full_page'
+alias mca='bin/magento cache:flush && rm -rf generated/* var/cache/* var/page_cache/* var/view_preprocessed/*'
+alias mii='bin/magento indexer:info'
+alias mir='bin/magento indexer:reindex'
+alias mauc='bin/magento admin:user:create'
+alias madmin='bin/magento admin:user:create --admin-user=quinten --admin-password=quinten123 --admin-email=quinten@justbetter.nl --admin-firstname=Quinten --admin-lastname=Buis'
+
+# ----------------------
+# Akeneo
+# ----------------------
+
+alias akeneo='bin/console'
+alias akeneo-refresh='rm -rf ./var/cache ./web/js ./web/css; akeneo --env=prod pim:installer:assets --symlink --clean; yarn run webpack'
+alias ak-index='bin/console akeneo:elasticsearch:reset-indexes && bin/console pim:product-model:index --all && bin/console pim:product:index --all'
