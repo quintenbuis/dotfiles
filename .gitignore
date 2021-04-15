@@ -1,0 +1,7 @@
+.idea
+.vscode
+.yarnrc
+auth.json
+.phpunit.result.cache
+package-dev
+.DS_Store
