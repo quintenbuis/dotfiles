@@ -22,6 +22,7 @@ alias o='open .' # Open the current directory in Finder
 alias sm='php ~/code/projects/server-monitor/artisan'
 alias v='vim'
 alias hg='history | grep'
+alias rick='echo "https://www.youtube.com/watch?v=dQw4w9WgXcQ" | pbcopy && echo "😎"'
 
 #---------------------
 # Composer
@@ -51,7 +52,7 @@ alias gb='git branch'
 alias gco='git checkout'
 alias gsu='git stash -u'
 alias gsp='git stash pop'
-alias reset='git fetch --all && git reset --hard upstream/`git rev-parse --abbrev-ref HEAD` && git push origin `git rev-parse --abbrev-ref HEAD` -f && cpm install'
+alias reset='git stash -u && git fetch --all && git reset --hard upstream/`git rev-parse --abbrev-ref HEAD` && git push origin `git rev-parse --abbrev-ref HEAD` -f && cpm install && git stash pop'
 alias gpsu='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
 alias commit='git commit -m "wip"'
 
