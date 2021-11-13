@@ -17,17 +17,30 @@ alias ns='npm start'
 alias start='npm start'
 alias nr='npm run'
 alias run='npm run'
-alias ll='ls -la' # List all files in current directory in long list format
+alias ll='exa --long --header --git' # List all files in current directory in long list format
 alias o='open .' # Open the current directory in Finder
 alias sm='php ~/code/projects/server-monitor/artisan'
 alias v='vim'
 alias hg='history | grep'
+alias rick='echo "https://www.youtube.com/watch?v=dQw4w9WgXcQ" | pbcopy && echo "😎"'
+alias qr='curl qrcode.show -d'
+
+db() {
+    open mysql://127.0.0.1/$1
+}
+
+weather() {
+    curl http://wttr.in/$1
+}
+
+alias magerun='cli-helpers db-magerun'
 
 #---------------------
 # Composer
 #---------------------
 alias composerm='phpm /usr/local/bin/composer'
 alias cu='composerm update'
+alias cc='composer config'
 alias ci='composerm install'
 alias cpm='composerm'
 
@@ -47,13 +60,21 @@ alias gss='git status -s'
 alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push'
+alias gpf='git push -f'
 alias gb='git branch'
+alias gbl='git branch | tail'
 alias gco='git checkout'
 alias gsu='git stash -u'
 alias gsp='git stash pop'
 alias reset='git fetch --all && git reset --hard upstream/`git rev-parse --abbrev-ref HEAD` && git push origin `git rev-parse --abbrev-ref HEAD` -f && cpm install'
 alias gpsu='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
-alias commit='git commit -m "wip"'
+alias wip='git commit -m "wip"'
+alias amend='git commit --amend'
+alias plog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches"
+
+gcot() {
+    git checkout --track origin/"$1"
+}
 
 # ----------------------
 # Laravel
@@ -61,11 +82,16 @@ alias commit='git commit -m "wip"'
 
 alias pa='php artisan'
 alias pat='clear && pa test'
+alias patp='clear && php artisan test --parallel'
 alias pu='clear && vendor/bin/phpunit'
 alias puf='clear && pu --filter'
-alias pam='pa migrate'
-alias pas='pa migrate --seed'
-alias par='pa migrate:rollback'
+alias pam='php artisan migrate'
+alias pamf='php artisan migrate:fresh'
+alias pamfs='php artisan migrate:fresh --seed'
+alias pamr='php artisan migrate:rollback'
+alias pas='php artisan db:seed'
+alias pacc='php artisan cache:clear'
+alias paoc='php artisan optimize:clear'
 alias sail='vendor/bin/sail'
 alias sa='sail artisan'
 
@@ -74,6 +100,14 @@ alias sa='sail artisan'
 # ----------------------
 
 alias phpm='php -d memory_limit=-1'
+alias pest='clear && ./vendor/bin/pest'
+alias pestp='pest -p'
+alias pec='clear && XDEBUG_MODE=coverage ./vendor/bin/pest --coverage'
+alias pecp='pec -p'
+alias puc='pu --coverage-html coverage'
+pef() {
+    pest --filter=$@
+}
 
 # ----------------------
 # Magento
