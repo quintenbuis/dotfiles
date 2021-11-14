@@ -1,0 +1,11 @@
+idea
+.idea
+.vscode
+.yarnrc
+auth.json
+package-lock.json
+.phpunit.result.cache
+package-dev
+.DS_Store
+.phpunit.cache/
+TODO-dev.md
