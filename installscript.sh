@@ -11,11 +11,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 zsh
 
-# Insert aliases
+# update dotfiles
 curl https://gist.githubusercontent.com/quintenbuis/dotfiles/main/.aliases > ~/.aliases
-
 curl https://raw.githubusercontent.com/quintenbuis/dotfiles/main/.zshrc > ~/.zshrc
-
 curl https://raw.githubusercontent.com/quintenbuis/dotfiles/main/.vimrc > ~/.vimrc
 curl https://raw.githubusercontent.com/quintenbuis/dotfiles/main/.gitignore > ~/.gitignore
 
