@@ -9,8 +9,8 @@ alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'" # C
 alias ip='curl icanhazip.com'
 alias l='natls -a'
 alias chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
-alias aliases='vim ~/.aliases'
-alias load='source ~/.aliases'
+alias aliases='vim ~/dotfiles/.aliases'
+alias load='source ~/dotfiles/.aliases'
 alias c='code .'
 alias s='subl .'
 alias ns='npm start'
@@ -24,6 +24,7 @@ alias v='vim'
 alias hg='history | grep'
 alias rick='echo "https://www.youtube.com/watch?v=dQw4w9WgXcQ" | pbcopy && echo "😎"'
 alias qr='curl qrcode.show -d'
+alias dotfiles='cd ~/dotfiles'
 
 db() {
     open mysql://127.0.0.1/$1
