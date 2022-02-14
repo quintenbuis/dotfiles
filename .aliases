@@ -25,6 +25,7 @@ alias hg='history | grep'
 alias rick='echo "https://www.youtube.com/watch?v=dQw4w9WgXcQ" | pbcopy && echo "😎"'
 alias qr='curl qrcode.show -d'
 alias dotfiles='cd ~/dotfiles'
+alias yt='youtube-dl -o "~/Movies/%(title)s.%(ext)s"'
 
 db() {
     open mysql://127.0.0.1/$1
@@ -72,6 +73,7 @@ alias gpsu='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
 alias wip='git commit -m "wip"'
 alias amend='git commit --amend'
 alias plog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches"
+alias gdt="git describe --tags"
 
 gcot() {
     git checkout --track origin/"$1"
