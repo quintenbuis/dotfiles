@@ -54,6 +54,7 @@ figma \
 postman \
 phpmon \
 cyberduck \
+todoist \
 --cask
 
 brew install \
