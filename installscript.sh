@@ -55,6 +55,7 @@ postman \
 phpmon \
 cyberduck \
 todoist \
+balance-lock \
 --cask
 
 brew install \
