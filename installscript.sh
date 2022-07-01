@@ -19,10 +19,6 @@ curl https://raw.githubusercontent.com/quintenbuis/dotfiles/main/.gitignore > ~/
 
 git config --global core.excludesFile '~/.gitignore'
 
-// install spaceship prompt
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
 # composer
 brew install composer
 
@@ -38,7 +34,6 @@ brew tap nicoverbruggen/homebrew-cask
 
 brew install \
 notion \
-alfred \
 google-chrome \
 slack \
 dbngin \
@@ -47,7 +42,6 @@ spotify \
 docker \
 whatsapp \
 phpstorm \
-spectacle \
 tinkerwell \
 ray \
 figma \
@@ -56,14 +50,12 @@ phpmon \
 cyberduck \
 todoist \
 balance-lock \
+rectangle \
 --cask
 
 brew install \
-git-flow \
 eul \
 gh \
-mailhog \
-zsh-autosuggestions \
 
 # add elasticsearch image to docker
 docker run -d --name elasticsearch-793 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.9.3
