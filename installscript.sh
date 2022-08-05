@@ -32,6 +32,7 @@ brew install php && composer global require laravel/valet && ~/.composer/vendor/
 
 brew tap nicoverbruggen/homebrew-cask
 
+# Homebrew Casks
 brew install \
 notion \
 google-chrome \
@@ -51,11 +52,13 @@ cyberduck \
 todoist \
 balance-lock \
 rectangle \
+obsidian \
 --cask
 
+# Homebrew packages
 brew install \
 eul \
 gh \
 
 # add elasticsearch image to docker
-docker run -d --name elasticsearch-793 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.9.3
+# docker run -d --name elasticsearch-793 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.9.3
