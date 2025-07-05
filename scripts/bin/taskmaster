@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2068
+
+function taskmaster {
+  CURDIR=$(pwd)
+
+  while [ -d "$CURDIR" ] && [ "$CURDIR" != '/' ]
+  do
+    if [ -x "$CURDIR/Taskfile" ]; then
+      cd "$CURDIR" && ./Taskfile $@
+      exit
+    elif [ -f "$CURDIR/Makefile" ]; then
+      cd "$CURDIR" && make $@
+      exit
+    elif compgen -G "$CURDIR/.ahoy*" > /dev/null; then
+      cd "$CURDIR" && ahoy $@
+      exit
+    else
+      CURDIR="$(dirname "$CURDIR")"
+    fi
+  done
+}
+
+taskmaster "$@"
+
+echo "No taskrunner file found in this or parent directories (looked for Taskfile, Makefile and .ahoy.yml)."
+exit 1
