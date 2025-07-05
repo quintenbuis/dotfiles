@@ -13,12 +13,12 @@ plugins=(
 	fast-syntax-highlighting
 )
 
-export PATH="/home/quinten/bin:/home/quinten/.local/bin:$PATH"
-
 source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Zoxide
 eval "$(zoxide init zsh)"
 
 source ~/.aliases
@@ -29,15 +29,13 @@ source ~/.aliases
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/quinten/google-cloud-sdk/completion.bash.inc' ]; then . '/home/quinten/google-cloud-sdk/completion.bash.inc'; fi
 
-# Set PATH, MANPATH, etc., for Homebrew.
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # Env Variables
 export EDITOR="vim"
 export CDPATH=".:~/code/projects"
 export KUBECONFIG=$HOME/.kube/config
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export TERM=xterm-256color
+
 # Asdf
 export ASDF_DATA_DIR="/home/quinten/.asdf"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -59,3 +57,4 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:$HOME/dotfiles/scripts/bin"
