@@ -11,6 +11,7 @@ plugins=(
 	asdf
 	zsh-syntax-highlighting
 	fast-syntax-highlighting
+	zsh-bat
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -58,3 +59,6 @@ autoload -Uz compinit && compinit
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:$HOME/dotfiles/scripts/bin"
+
+alias claude="/home/quinten/.claude/local/claude"
+
