@@ -36,9 +36,10 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-bindsym XF86AudioPlay exec mh play-pause
-bindcode $mod+Shift+60 exec mh next
-bindcode $mod+Shift+59 exec mh previous
+bindsym XF86AudioPlay exec --no-startup-id $HOME/dotfiles/scripts/bin/mh play-pause
+bindcode $mod+Shift+60 exec --no-startup-id $HOME/dotfiles/scripts/bin/mh next
+bindcode $mod+Shift+59 exec --no-startup-id $HOME/dotfiles/scripts/bin/mh previous
+
 
 ## Volume control
 bindcode Ctrl+$mod+Shift+21 exec --no-startup-id amixer -D pulse sset Master 5%+
