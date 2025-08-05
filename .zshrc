@@ -1,5 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+export PATH="$PATH:$HOME/dotfiles/scripts/bin"
+
 ZSH_THEME="robbyrussell"
 
 plugins=(
@@ -51,14 +53,12 @@ export BAT_THEME="OneHalfDark"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--preview 'batcat -n --color=always {}'"
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # append completions to fpath
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH="$PATH:$HOME/dotfiles/scripts/bin"
 
 alias claude="/home/quinten/.claude/local/claude"
 
