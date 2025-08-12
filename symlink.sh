@@ -1,17 +1,40 @@
 #!/bin/bash
 
-SOURCE_DIR="/home/quinten/dotfiles/scripts/bin"
+DOTFILES_DIR="/home/quinten/dotfiles"
 
-# Loop over all files in the directory
-for file in "$SOURCE_DIR"/*; do
-  # Skip if it's not a regular file or not executable
-  [ -f "$file" ] || continue
-  [ -x "$file" ] || continue
+config() {
+  CONFIG_DIR="$DOTFILES_DIR/.config"
 
-  # Get the base name of the file
-  filename=$(basename "$file")
+  shopt -s nullglob
+  for dir in "$CONFIG_DIR"/*; do
+    [ -d "$dir" ] || continue
 
-  # Create a symbolic link in /usr/local/bin
-  sudo ln -sf "$file" "/usr/local/bin/$filename"
-  echo "Linked $file to /usr/local/bin/$filename"
-done
+    dirname=$(basename "$dir")
+
+    targetDir=$HOME/.config/$dirname
+
+    [ -d "$targetDir" ] && rm -r "$targetDir"
+
+    sudo ln -sf "$dir" "$targetDir"
+    echo "Linked $dir to $targetDir"
+  done
+}
+
+scripts() {
+  SCRIPTS_DIR="$DOTFILES_DIR/scripts/bin"
+
+  shopt -s nullglob
+  for file in "$SCRIPTS_DIR"/*; do
+    [ -f "$file" ] || continue
+    [ -x "$file" ] || continue
+
+    filename=$(basename "$file")
+
+    sudo ln -sf "$file" "/usr/local/bin/$filename"
+    echo "Linked $file to /usr/local/bin/$filename"
+  done
+}
+
+
+config
+scripts
