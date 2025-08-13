@@ -8,6 +8,7 @@ alias v='vim'
 alias hg='history | grep'
 alias yt='youtube-dl -o "~/Movies/%(title)s.%(ext)s"'
 alias zel='zellij'
+alias za='zellij a'
 alias lg='lazygit'
 
 weather() {
