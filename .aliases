@@ -1,15 +1,24 @@
 #---------------------
+# SHORTS
+#---------------------
+
+alias lg="lazygit"
+alias ldocker="lazydocker"
+alias kc="kubectx"
+alias tm="taskmaster"
+alias za="zellij a"
+alias zel="zellij"
+alias docker-compose="docker compose"
+
+#---------------------
 # SYSTEM
 #---------------------
-alias ip='curl icanhazip.com'
+alias hazip='curl icanhazip.com'
 alias aliases='vim ~/dotfiles/.aliases'
 alias load='source ~/dotfiles/.aliases'
 alias v='vim'
 alias hg='history | grep'
 alias yt='youtube-dl -o "~/Movies/%(title)s.%(ext)s"'
-alias zel='zellij'
-alias za='zellij a'
-alias lg='lazygit'
 
 weather() {
     curl http://wttr.in/$1
