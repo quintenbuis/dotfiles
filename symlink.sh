@@ -35,6 +35,14 @@ scripts() {
   done
 }
 
+stow () {
+  for dir in "$DOTFILES_DIR"/teststow/*; do
+    stow $dir
+  done
+}
 
-config
-scripts
+
+// config
+// scripts
+
+stow
